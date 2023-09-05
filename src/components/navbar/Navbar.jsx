@@ -7,8 +7,8 @@ import {BsFillSunFill, BsMoonFill, BsTwitter, BsGithub, BsInstagram, BsLinkedin}
 function Navbar() {
   const [colorMode, setColorMode] = useColorMode();
   return (
-    <nav className="navbar ">
-      <div className='navbar-start gap-3 text-xl'>
+    <nav className="flex justify-between p-2">
+      <div className='flex items-center gap-3 text-xl'>
         <a href="https://github.com/killy10o10" target='_blank'>
           <BsGithub />
         </a>
@@ -22,10 +22,10 @@ function Navbar() {
           <BsInstagram />
         </a>
       </div>
-      <div className='navbar-center'>
+      <div className='hidden md:flex items-center'>
         <a className="btn btn-ghost normal-case text-xl">NextBlog</a>
       </div>
-      <div className='navbar-end'>
+      <div className='flex flex-col md:flex-row items-center'>
         <button
             className="btn btn-ghost btn-circle"
             onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
@@ -35,7 +35,7 @@ function Navbar() {
               <BsFillSunFill className="h-6 w-6" />
             )}
           </button>
-          <div className='flex gap-3'>
+          <div className='flex flex-col md:flex-row gap-3'>
              <Link className='gradient-text' href="/">Home</Link>   
              <Link className='gradient-text' href="/">About</Link>   
              <a className='gradient-text' href="mailto:quamikilly@gmail.com">Contact</a>   

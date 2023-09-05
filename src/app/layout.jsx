@@ -13,15 +13,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white text-blue-gray-900 dark:text-blue-gray-400 dark:bg-blue-gray-600`}>
-        <div className='xl:flex items-center justify-center'>
-          <div>
-            <Navbar />
-            {children}
+        <body className={`${inter.className} bg-white text-blue-gray-900 dark:text-blue-gray-400 dark:bg-blue-gray-600`}>
+          <div className='xl:flex items-center justify-center'>
+            <div>
+              <Navbar />
+              {children}
+            </div>
           </div>
-        </div>
-        <Footer />
-      </body>
+          <Footer />
+        </body>
     </html>
   )
 }
