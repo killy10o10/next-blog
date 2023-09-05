@@ -1,34 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![](https://img.shields.io/badge/Quami-Killy-blue)
+
+# My Next Blog
+
+> This is a blog site built with Next.js
+
+## Built With
+
+- React
+- Nextjs
+- Javascript
+- Tailwind CSS
+- MongoDB
+
+## Live Demo
+
+- [App Live Link]()
+  ![Alt text](./screenshot.png 'next-blog')
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple example steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- git
+- Broswer to Display
+- IDE to run and edit the code
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- open a terminal
+- run ` git clone git@github.com:killy10o10/next-blog.git`
+- run ` cd next-blog`
+- run `npm install`
+- run `npm run dev`
+- Enter `http://localhost:3000/` in your browser
 
-## Learn More
+### Usage
 
-To learn more about Next.js, take a look at the following resources:
+- It can be used to create posts for blog.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+👤 **Okine Kingsley**
 
-## Deploy on Vercel
+- GitHub: [@killy10o10](https://github.com/killy10o10)
+- Twitter: [@Quami_Killy](https://twitter.com/Quami_Killy)
+- Instagram: [quami_killy](https://www.instagram.com/quami_killy/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
