@@ -1,10 +1,10 @@
-import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/navbar/Navbar";
+// import Footer from "@/components/footer/Footer";
+// import Navbar from "@/components/navbar/Navbar";
 
 export default function Home() {
   return(
    <>
-    <Navbar />
+    {/* <Navbar /> */}
       <div className="flex flex-col min-h-screen items-center justify-center p-3 lg:p-8">
         <article className="prose lg:prose-xl text-inherit">
           <h1 className="text-inherit">Garlic bread with cheese: What the science tells us</h1>
@@ -19,7 +19,7 @@ export default function Home() {
           </p>
         </article>
       </div>
-      <Footer />
+      {/* <Footer /> */}
    </>
   );
 }

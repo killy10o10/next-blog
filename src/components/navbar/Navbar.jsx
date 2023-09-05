@@ -36,10 +36,10 @@ function Navbar() {
             )}
           </button>
           <div className='flex gap-3'>
-             <Link href="/">Homepage</Link>   
-             <Link href="/">About</Link>   
-             <a href="mailto:quamikilly@gmail.com">Contact</a>   
-             <Link href="/">Login</Link>
+             <Link className='gradient-text' href="/">Home</Link>   
+             <Link className='gradient-text' href="/">About</Link>   
+             <a className='gradient-text' href="mailto:quamikilly@gmail.com">Contact</a>   
+             <Link className='gradient-text' href="/">Login</Link>
           </div>  
       </div>
     </nav>
