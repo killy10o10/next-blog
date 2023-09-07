@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import {BsFillSunFill, BsMoonFill, BsTwitter, BsGithub, BsInstagram, BsLinkedin} from 'react-icons/bs';
 import {HiMiniBars3BottomRight, HiXMark} from 'react-icons/hi2'
+import AuthLink from '../authLink/AuthLink';
 
 function Navbar() {
   const [colorMode, setColorMode] = useColorMode();
@@ -43,11 +44,11 @@ function Navbar() {
               <BsFillSunFill className="h-6 w-6" />
             )}
           </button>
-          <div className={`${openNav ? "flex flex-col justify-center h-screen bg-base-300 w-screen left-0" : "hidden"} absolute text-center z-10 top-20 md:flex md:h-auto md:w-auto md:bg-transparent md:static md:text-left md:flex-row gap-3`}>
+          <div className={`${openNav ? "flex flex-col justify-center h-screen bg-base-300 w-screen left-0 text-4xl" : "hidden"} absolute text-center z-10 top-20 md:flex md:h-auto md:w-auto md:bg-transparent md:static md:text-left md:text-lg md:flex-row gap-3`}>
              <Link className='gradient-text' href="/">Home</Link>   
              <Link className='gradient-text' href="/">About</Link>   
              <a className='gradient-text' href="mailto:quamikilly@gmail.com">Contact</a>   
-             <Link className='gradient-text' href="/">Login</Link>
+             <AuthLink />
           </div>  
       </div>
       <button onClick={toggleNav} className='btn btn-circle text-2xl md:hidden'>
