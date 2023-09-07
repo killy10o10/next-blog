@@ -43,7 +43,7 @@ function Navbar() {
               <BsFillSunFill className="h-6 w-6" />
             )}
           </button>
-          <div className='absolute text-center md:text-left z-10 top-20 md:static flex flex-col md:flex-row gap-3'>
+          <div className={`${openNav ? "flex flex-col justify-center h-screen bg-base-300 w-screen left-0" : "hidden"} absolute text-center z-10 top-20 md:flex md:h-auto md:w-auto md:bg-transparent md:static md:text-left md:flex-row gap-3`}>
              <Link className='gradient-text' href="/">Home</Link>   
              <Link className='gradient-text' href="/">About</Link>   
              <a className='gradient-text' href="mailto:quamikilly@gmail.com">Contact</a>   
