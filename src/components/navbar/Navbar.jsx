@@ -30,9 +30,6 @@ function Navbar() {
           <BsInstagram />
         </a>
       </div>
-      <div className='hidden md:flex items-center'>
-        <a className="btn btn-ghost normal-case text-xl">NextBlog</a>
-      </div>
     
       <div className='flex flex-col md:flex-row items-center'>
         <button
