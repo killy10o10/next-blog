@@ -11,10 +11,11 @@ module.exports = {
     extend: {
       colors: {
         'blue-gray-400': '#a6adba',
+        'blue-gray-500': '#1d283a',
         'blue-gray-600': '#1d232a',
         'blue-gray-900': '#1f2937',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [require('@tailwindcss/typography')],
 };

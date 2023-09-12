@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-white text-blue-gray-900 dark:text-blue-gray-400 dark:bg-blue-gray-600 transition-all duration-1000 ease-linear`}>
+        className={`${inter.className} bg-white text-blue-gray-900 dark:text-blue-gray-400 dark:bg-blue-gray-600 transition-all duration-500 ease-linear`}>
         <div className="xl:flex items-center justify-center p-3">
           <div>
             <Navbar />
