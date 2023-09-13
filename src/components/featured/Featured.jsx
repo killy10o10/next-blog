@@ -3,7 +3,7 @@ import React from 'react'
 
 function Featured() {
   return (
-    <div className='grid md:grid-cols-2 gap-5 justify-center'>
+    <div className='grid md:grid-cols-2 gap-12 justify-center'>
         <div className='flex items-center justify-end'>
           <Image className='m-0 w-[100%] h-[100%] rounded-sm object-cover' src="/blog1.jpg" width={300} height={300} alt='blog1' />
         </div>

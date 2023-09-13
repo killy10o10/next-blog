@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+      },
       colors: {
         'blue-gray-400': '#a6adba',
         'blue-gray-500': '#1d283a',
