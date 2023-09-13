@@ -4,7 +4,7 @@ import CategoryCard from '../categoryCard/CategoryCard'
 function CategoryList() {
   return (
     <>
-      <div className='prose text-inherit max-w-full mt-3'>
+      <div className='prose text-inherit max-w-full my-4'>
         <h2 className='text-inherit'>Categories</h2>
         <div className='flex flex-wrap gap-5 justify-between items-center'>
           <CategoryCard categoryImage="/coding.jpg" categoryBG={`bg-violet-300`} categoryText="coding" />

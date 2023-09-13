@@ -1,5 +1,6 @@
 import CategoryList from "@/components/categoryList/CategoryList";
 import Featured from "@/components/featured/Featured";
+import PostList from "@/components/postList/PostList";
 
 export default function Home() {
   return(
@@ -8,6 +9,7 @@ export default function Home() {
         <h1 className="text-inherit">Garlic bread with cheese: What the science tells us</h1>
         <Featured />
         <CategoryList />
+        <PostList />
       </div>
    </>
   );
