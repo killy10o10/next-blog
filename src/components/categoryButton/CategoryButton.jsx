@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CategoryCard = ({categoryImage, categoryText, categoryBG}) => {
+const CategoryButton = ({categoryImage, categoryText, categoryBG}) => {
 
   const style = {
     backgroundImage: `url(${categoryImage})`,
@@ -19,4 +19,4 @@ const CategoryCard = ({categoryImage, categoryText, categoryBG}) => {
   );
 };
 
-export default CategoryCard;
+export default CategoryButton;
