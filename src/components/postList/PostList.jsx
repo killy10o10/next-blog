@@ -1,12 +1,15 @@
 import React from 'react';
 import PostCard from '../postCard/PostCard';
 import PopularPost from '../popularPost/PopularPost';
+import CategoryChip from '../categoryChip/CategoryChip';
+import Image from 'next/image';
 
 const PostList = () => {
   return (
     <div className="prose max-w-full grid grid-cols-7 gap-12 text-inherit">
       <div className="col-span-5">
         <h4 className="text-inherit font-bold text-2xl">Recent Posts</h4>
+        <PostCard />
         <PostCard />
         <PostCard />
         <PostCard />
@@ -20,13 +23,35 @@ const PostList = () => {
         <PopularPost category="food" />
         <PopularPost category="culture" />
         <PopularPost category="coding" />
-        <div className='flex items-center flex-wrap gap-5'>
-          <button className='bg-food px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>Food</button>
-          <button className='bg-culture px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>culture</button>
-          <button className='bg-coding px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>coding</button>
-          <button className='bg-fashion px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>fashion</button>
-          <button className='bg-style px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>style</button>
-          <button className='bg-travel px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>travel</button>
+        <div>
+          <span className="dark:text-gray-600 text-gray-400">Discover by topics</span>
+          <h4 className="font-bold text-2xl">Categories</h4>
+        </div>
+        <div className="flex items-center flex-wrap gap-5">
+          <CategoryChip category="culture" />
+          <CategoryChip category="food" />
+          <CategoryChip category="travel" />
+          <CategoryChip category="style" />
+          <CategoryChip category="coding" />
+          <CategoryChip category="fashion" />
+        </div>
+        <div>
+          <span className="dark:text-gray-600 text-gray-400">Chosen by the editor</span>
+          <h4 className="font-bold text-2xl">Editors Pick</h4>
+        </div>
+        <div className='flex flex-col gap-10'>
+          <div className='flex items-center gap-4'>
+            <Image className='rounded-full h-20 w-20 object-cover' src="/food.png" width={35} height={35} />
+            <PopularPost category="food" />
+          </div>
+          <div className='flex items-center gap-4'>
+            <Image className='rounded-full h-20 w-20 object-cover' src="/travel.jpeg" width={35} height={35} />
+            <PopularPost category="travel" />
+          </div>
+          <div className='flex items-center gap-4'>
+            <Image className='rounded-full h-20 w-20 object-cover' src="/coding.jpg" width={35} height={35} />
+            <PopularPost category="coding" />
+          </div>
         </div>
       </div>
     </div>
