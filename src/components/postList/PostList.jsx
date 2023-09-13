@@ -1,34 +1,36 @@
-import Image from 'next/image'
-import React from 'react'
+import React from 'react';
+import PostCard from '../postCard/PostCard';
+import PopularPost from '../popularPost/PopularPost';
 
 const PostList = () => {
   return (
-    <div className='prose max-w-full grid grid-cols-7 gap-5 text-inherit'>
-      <div className='col-span-5'>
-        <h4 className='text-inherit font-bold text-2xl'>Recent Posts</h4>
-        <div className='grid items-center grid-cols-2 gap-8'>
-          <div>
-            <Image width={200} height={200} src="/food.png" alt="post1" className='w-[100%] rounded-sm object-cover' />
-          </div>
-          <div className='flex flex-col'>
-            <small className='flex items-center'><span className='text-gray-400 dark:text-gray-600'>11.02.2023</span> ● <span className='text-red-600 uppercase'>culture</span></small>
-            <h3 className='text-inherit'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!</p>
-            <button className='font-bold w-fit border-b-2 border-red-600'>Read More</button>
-        </div>
+    <div className="prose max-w-full grid grid-cols-7 gap-12 text-inherit">
+      <div className="col-span-5">
+        <h4 className="text-inherit font-bold text-2xl">Recent Posts</h4>
+        <PostCard />
+        <PostCard />
+        <PostCard />
       </div>
-      </div>
-      <div className='col-span-2 not-prose mt-5'>
-          <span className='dark:text-gray-600 text-gray-400'>What's hot</span>
-          <h4 className='font-bold text-2xl mb-5'>Most Popular</h4>
+      <div className="col-span-2 not-prose mt-5 flex flex-col gap-10">
         <div>
-          <small className='py-1 px-3 bg-blue-300 rounded-lg text-blue-gray-900 text-sm font-bold'>Travel</small>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <small className='flex items-center gap-1 text-sm mt-2'><span className='font-bold'>John Doe</span>●<span className='text-gray-400 dark:text-gray-600'>01.09.2023</span></small>
+          <span className="dark:text-gray-600 text-gray-400">What's hot</span>
+          <h4 className="font-bold text-2xl">Most Popular</h4>
+        </div>
+        <PopularPost category="travel" />
+        <PopularPost category="food" />
+        <PopularPost category="culture" />
+        <PopularPost category="coding" />
+        <div className='flex items-center flex-wrap gap-5'>
+          <button className='bg-food px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>Food</button>
+          <button className='bg-culture px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>culture</button>
+          <button className='bg-coding px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>coding</button>
+          <button className='bg-fashion px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>fashion</button>
+          <button className='bg-style px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>style</button>
+          <button className='bg-travel px-5 py-1 font-bold rounded-md text-slate-900 capitalize'>travel</button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostList
+export default PostList;
