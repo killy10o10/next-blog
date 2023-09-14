@@ -1,3 +1,4 @@
+import Comment from '@/components/comment/Comment';
 import PopularPost from '@/components/popularPost/PopularPost';
 import Image from 'next/image';
 import React from 'react';
@@ -22,23 +23,17 @@ const singlePostPage = () => {
       </div>
 
       <div className='grid md:grid-cols-7 gap-12 text-inherit'>
-          <div className='col-span-5 flex flex-col gap-4'>
+          <div className='col-span-5 flex flex-col'>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus quidem aut a nam qui veritatis, mollitia vel culpa in corrupti molestiae vero maxime ut, asperiores quod blanditiis distinctio voluptatibus!
             architecto nisi facilis, praesentium voluptatibus itaque voluptatem consequuntur voluptatum accusantium culpa? Optio enim possimus, soluta suscipit quas quis.</p>
-
+            <br />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, deserunt, temporibus quidem delectus voluptatum provident recusandae porro deleniti consequatur dolores tenetur quae inventore quibusdam nisi error! Eligendi doloribus laborum sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus quidem aut a nam qui veritatis, mollitia vel culpa in corrupti molestiae vero maxime ut, asperiores quod blanditiis distinctio voluptatibus!
             Ullam debitis assumenda explicabo repudiandae provident, perspiciatis temporibus repellendus numquam ipsam eveniet architecto nisi facilis, praesentium voluptatibus itaque voluptatem consequuntur voluptatum accusantium culpa? Optio enim possimus, soluta suscipit quas quis.</p>
-
+            <br />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus quidem aut a nam qui veritatis, mollitia vel culpa in corrupti molestiae vero maxime ut, asperiores quod blanditiis distinctio voluptatibus!
              temporibus repellendus numquam ipsam eveniet architecto nisi facilis, praesentium voluptatibus itaque voluptatem consequuntur voluptatum accusantium culpa? Optio enim possimus, soluta suscipit quas quis.</p>
-
-            <div>
-              <h3 className='font-bold text-3xl my-10'>Comments</h3>
-              <form className='flex gap-5 items-center'>
-                <textarea className='w-[80%] rounded shadow px-4 py-2 text-xl text-blue-gray-900' placeholder='write comment here'></textarea>
-                <button className='rounded shadow bg-blue-600 font-bold text-slate-100 h-fit py-2 px-8'>Post</button>
-              </form>
-            </div> 
+            <br />
+            <Comment />
           </div>
           <div className='col-span-2 hidden md:flex flex-col gap-10'>
             <div>
