@@ -1,5 +1,4 @@
 import PostList from '@/components/postList/PostList'
-import React from 'react'
 
 const blogPage = () => {
   return (

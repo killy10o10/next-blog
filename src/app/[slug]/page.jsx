@@ -1,7 +1,6 @@
 import Comment from '@/components/comment/Comment';
 import PopularPost from '@/components/popularPost/PopularPost';
 import Image from 'next/image';
-import React from 'react';
 
 const singlePostPage = () => {
   return (

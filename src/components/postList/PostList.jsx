@@ -1,4 +1,3 @@
-import React from 'react';
 import PostCard from '../postCard/PostCard';
 import PopularPost from '../popularPost/PopularPost';
 import CategoryChip from '../categoryChip/CategoryChip';
@@ -42,17 +41,35 @@ const PostList = () => {
           <span className="dark:text-gray-600 text-gray-400">Chosen by the editor</span>
           <h4 className="font-bold text-2xl">Editors Pick</h4>
         </div>
-        <div className='flex flex-col gap-10'>
-          <div className='flex items-center gap-4'>
-            <Image className='rounded-full h-20 w-20 object-cover' src="/food.png" alt='editors pick' width={35} height={35} />
+        <div className="flex flex-col gap-10">
+          <div className="flex items-center gap-4">
+            <Image
+              className="rounded-full h-20 w-20 object-cover"
+              src="/food.png"
+              alt="editors pick"
+              width={35}
+              height={35}
+            />
             <PopularPost category="food" />
           </div>
-          <div className='flex items-center gap-4'>
-            <Image className='rounded-full h-20 w-20 object-cover' src="/travel.jpeg" alt='editors pick' width={35} height={35} />
+          <div className="flex items-center gap-4">
+            <Image
+              className="rounded-full h-20 w-20 object-cover"
+              src="/travel.jpeg"
+              alt="editors pick"
+              width={35}
+              height={35}
+            />
             <PopularPost category="travel" />
           </div>
-          <div className='flex items-center gap-4'>
-            <Image className='rounded-full h-20 w-20 object-cover' src="/coding.jpg" alt='editors pick' width={35} height={35} />
+          <div className="flex items-center gap-4">
+            <Image
+              className="rounded-full h-20 w-20 object-cover"
+              src="/coding.jpg"
+              alt="editors pick"
+              width={35}
+              height={35}
+            />
             <PopularPost category="coding" />
           </div>
         </div>

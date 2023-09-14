@@ -1,4 +1,3 @@
-import React from 'react'
 import CategoryButton from '../categoryButton/CategoryButton'
 
 function CategoryList() {

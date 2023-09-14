@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${inter.variable} font-sans bg-white text-blue-gray-900 dark:text-blue-gray-400 dark:bg-blue-gray-600 transition-all duration-500 ease-linear`}>
-        <div className="xl:flex items-center justify-center p-3">
-          <div>
+        <div className="p-3">
+          <div className="max-w-[1400px] mx-auto">
             <Navbar />
             {children}
           </div>

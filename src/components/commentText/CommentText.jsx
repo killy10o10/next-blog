@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react'
 
 const CommentText = () => {
   return (
@@ -14,7 +13,7 @@ const CommentText = () => {
           />
           <div className='flex flex-col'>
             <small className="text-inherit font-semibold">Kingsley Quami Okine</small>
-            <small className="dark:text-gray-600 text-gray-400 font-semibold">25 April 2023</small>
+            <small className="dark:text-gray-600 text-gray-400 font-semibold">25.04.2023</small>
           </div>
         </div>
         <p className="font-semibold">

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CategoryButton = ({categoryImage, categoryText, categoryBG}) => {
 
   const style = {
