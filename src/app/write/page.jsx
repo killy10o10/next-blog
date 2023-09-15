@@ -1,9 +1,12 @@
 'use client';
 import { useState } from 'react';
-const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
+import dynamic from 'next/dynamic';
 import "react-quill/dist/quill.bubble.css"
 import {BsPlusCircle, BsImage, BsUpload} from 'react-icons/bs'
 import {FaPhotoVideo} from 'react-icons/fa';
+
+
+const ReactQuill = dynamic(() => {return import('react-quill');},{ssr: false})
 
 const WritePage = () => {
   const [open , setOpen] = useState(false);
