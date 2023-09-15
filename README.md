@@ -10,6 +10,9 @@
 - Nextjs
 - Javascript
 - Tailwind CSS
+- Prisma
+- Authjs
+- Quilljs
 - MongoDB
 
 ## Live Demo

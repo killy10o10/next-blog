@@ -11,7 +11,7 @@ function AuthLink() {
   return (
     <>
      {
-      status === "unauthenticated" ? <Link className='gradient-text' href="/login">Login</Link> :
+      status === "unauthenticated" || status === "loading" ? <Link className='gradient-text' href="/login">Login</Link> :
      <div className='flex items-center gap-2'>
         <Link className='gradient-text' href="/write">Write</Link>
         <span onClick={handleSignout} className='cursor-pointer gradient-text'>Logout</span> 
