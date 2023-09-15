@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import ReactQuill from 'react-quill';
+const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
 import "react-quill/dist/quill.bubble.css"
 import {BsPlusCircle, BsImage, BsUpload} from 'react-icons/bs'
 import {FaPhotoVideo} from 'react-icons/fa';

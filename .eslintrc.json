@@ -14,6 +14,10 @@
       "@typescript-eslint/no-explicit-any": "error",
       "react/prop-types": "off",
       "@typescript-eslint/explicit-module-boundary-types": "on",
-      "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }]
+      "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
+      "@typescript-eslint/explicit-function-return-type": [
+        "error",
+        { "allowExpressions": true } 
+    ]
     }
 }
