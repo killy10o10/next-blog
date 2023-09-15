@@ -1,6 +1,6 @@
 "use client"
 import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation"; // Changed from "next/navigation" to "next/router"
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 function LoginPage() {
