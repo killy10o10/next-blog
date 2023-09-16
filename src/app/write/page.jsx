@@ -16,7 +16,7 @@ const WritePage = () => {
 
   return (
     <div className="min-h-screen relative">
-      <input type="text" placeholder='Heading Here' className='bg-transparent outline-none font-bold text-6xl p-12' />
+      <input type="text" placeholder='Heading Here' className='bg-transparent outline-none font-bold text-6xl p-12 w-full' />
       <div className='flex items-center gap-5 absolute z-50 -left-4 top-36'>
         <button onClick={handleOpen} className='active:scale-95 transition'>
           <BsPlusCircle className='text-4xl' />

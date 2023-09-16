@@ -17,7 +17,7 @@ const singlePostPage = () => {
           </div>
         </div>
         <div className='flex flex-col justify-center'>
-          <Image src="/fashion.jpg" width={500} height={300} className='rounded-xl w-full h-[79%]' />
+          <Image src="/fashion.jpg" alt='featured-image' priority={true} width={500} height={300} className='rounded-xl w-full h-[79%]' />
         </div>
       </div>
 
