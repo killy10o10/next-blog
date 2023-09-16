@@ -1,34 +1,35 @@
-"use client"
-import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+'use client';
+
+import React, { useEffect } from 'react';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 function LoginPage() {
   const { data: session, status } = useSession();
-  console.log(session, status)
+  console.log(session, status);
   const router = useRouter();
 
   useEffect(() => {
-    if (status === "authenticated") {
-      router.push("/");
+    if (status === 'authenticated') {
+      router.push('/');
     }
   }, [status, router]);
 
   const handleGoogleLogin = () => {
-    signIn("google");
+    signIn('google');
   };
 
   const handleGithubLogin = () => {
-    signIn("github"); 
+    signIn('github');
   };
 
   const handleFacebookLogin = () => {
-    signIn("facebook"); 
+    signIn('facebook');
   };
 
   return (
     <div className="min-h-screen text-inherit flex flex-col justify-center">
-      {status === "loading" ? ( // Show loading message while checking authentication
+      {status === 'loading' ? ( // Show loading message while checking authentication
         <div className="text-center font-bold text-2xl text-yellow-400 min-h-screen flex justify-center items-center">
           Loading...
         </div>
@@ -47,6 +48,7 @@ function LoginPage() {
             Sign in with GitHub
           </button>
           <button
+            type="button"
             onClick={handleFacebookLogin}
             className="font-bold active:scale-95 transition shadow-lg text-xl w-4/6 lg:w-3/6 text-slate-100 bg-blue-500 py-4  rounded-lg"
           >
