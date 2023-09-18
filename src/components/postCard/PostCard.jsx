@@ -9,6 +9,7 @@ const PostCard = () => {
           height={200}
           src="/food.png"
           alt="post1"
+          priority={true}
           className="w-[100%] rounded-sm object-cover"
         />
       </div>

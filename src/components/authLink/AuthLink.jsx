@@ -1,8 +1,11 @@
-import { signOut, useSession } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 function AuthLink() {
-  const {status} = useSession()
+  const {status, data} = useSession()
+
+  console.log(data)
 
   const handleSignout = () => {
     signOut()
@@ -11,10 +14,12 @@ function AuthLink() {
   return (
     <>
      {
-      status === "unauthenticated" || status === "loading" ? <Link className='gradient-text' href="/login">Login</Link> :
+      status === "unauthenticated" || status === "loading" ? <button className='gradient-text' type='button' onClick={() => signIn()}>Login</button> :
      <div className='flex items-center gap-2'>
         <Link className='gradient-text' href="/write">Write</Link>
-        <span onClick={handleSignout} className='cursor-pointer gradient-text'>Logout</span> 
+        <div onClick={handleSignout} className='cursor-pointer h-8 w-8 relative'>
+          <Image src={data.user.image} fill className='inline-block rounded-full' />
+        </div> 
      </div>
      } 
     </>
