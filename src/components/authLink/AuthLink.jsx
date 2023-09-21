@@ -4,9 +4,7 @@ import Link from 'next/link'
 
 function AuthLink() {
   const {status, data} = useSession()
-
-  console.log(data)
-
+  
   const handleSignout = () => {
     signOut()
   }
@@ -18,7 +16,7 @@ function AuthLink() {
      <div className='flex items-center gap-2'>
         <Link className='gradient-text' href="/write">Write</Link>
         <div onClick={handleSignout} className='cursor-pointer h-8 w-8 relative'>
-          <Image src={data.user.image} fill className='inline-block rounded-full' />
+          <Image src={data.user.image} width={32} height={32} className='inline-block rounded-full' alt='profile-pic' />
         </div> 
      </div>
      } 

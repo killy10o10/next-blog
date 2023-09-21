@@ -21,7 +21,7 @@ const CategoryList = async () => {
             <CategoryButton
               key={item._id}
               categoryImage={item.img}
-              categoryBG={`bg-${item.title}`}
+              categoryBG={item.title}
               categoryText={item.title}
             />
           ))}
