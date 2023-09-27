@@ -4,8 +4,8 @@ import CategoryChip from '../categoryChip/CategoryChip';
 import Image from 'next/image';
 import Pagination from '../pagination/Pagination';
 
-const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/categories', {
+const getData = async (page) => {
+  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
     cache: 'default',
   });
   if (!res.ok) {
@@ -14,7 +14,8 @@ const getData = async () => {
   return res.json();
 };
 
-const PostList = () => {
+const PostList = ({page}) => {
+
   return (
     <div className="prose max-w-full grid md:grid-cols-7 gap-12 text-inherit">
       <div className="col-span-5 flex flex-col gap-10 md:block">
