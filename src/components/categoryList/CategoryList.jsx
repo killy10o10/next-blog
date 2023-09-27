@@ -20,7 +20,7 @@ const CategoryList = async () => {
           {data?.map((item) => (
             <CategoryButton
               key={item._id}
-              categoryImage={item.img}
+              categoryImage={item.img || ""}
               categoryBG={item.title}
               categoryText={item.title}
             />

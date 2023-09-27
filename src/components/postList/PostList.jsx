@@ -4,16 +4,26 @@ import CategoryChip from '../categoryChip/CategoryChip';
 import Image from 'next/image';
 import Pagination from '../pagination/Pagination';
 
+const getData = async () => {
+  const res = await fetch('http://localhost:3000/api/categories', {
+    cache: 'default',
+  });
+  if (!res.ok) {
+    throw new Error('Failed');
+  }
+  return res.json();
+};
+
 const PostList = () => {
   return (
     <div className="prose max-w-full grid md:grid-cols-7 gap-12 text-inherit">
       <div className="col-span-5 flex flex-col gap-10 md:block">
         <h4 className="text-inherit font-bold text-2xl">Recent Posts</h4>
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        <PostCard postCategory="culture" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/culture.jpg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
+        <PostCard postCategory="food" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/food.png" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
+        <PostCard postCategory="coding" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/coding.jpg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
+        <PostCard postCategory="fashion" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/fashion.jpg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
+        <PostCard postCategory="travel" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/travel.jpeg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
         <Pagination />
       </div>
       <div className="hidden col-span-2 not-prose mt-5 md:flex flex-col gap-10">
