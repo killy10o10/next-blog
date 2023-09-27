@@ -70,6 +70,7 @@ model Post {
   createdAT DateTime  @default(now())
   slug      String    @unique
   title     String
+  desc      String
   img       String?
   views     Int       @default(0)
   catSlug   String
