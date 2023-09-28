@@ -14,17 +14,23 @@ const getData = async (page) => {
   return res.json();
 };
 
-const PostList = ({page}) => {
+const PostList = async ({ page }) => {
+  const data = await getData(page);
 
   return (
     <div className="prose max-w-full grid md:grid-cols-7 gap-12 text-inherit">
       <div className="col-span-5 flex flex-col gap-10 md:block">
         <h4 className="text-inherit font-bold text-2xl">Recent Posts</h4>
-        <PostCard postCategory="culture" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/culture.jpg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
-        <PostCard postCategory="food" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/food.png" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
-        <PostCard postCategory="coding" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/coding.jpg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
-        <PostCard postCategory="fashion" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/fashion.jpg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
-        <PostCard postCategory="travel" postDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. endus sit consequatur quaerat provident quidem possimus ipsa iusto nulla quasi iste? Repellat minima ipsam ullam quam!" postImage="/travel.jpeg" postHeading="Lorem ipsum dolor sit amet consectetur adipisicing elit." postDate="11.02.2023" />
+        {data?.map((post) => (
+          <PostCard
+            key={post.id}
+            postCategory={post.slug}
+            postDescription={post.desc}
+            postImage={post.img}
+            postHeading={post.title}
+            postDate={post.createdAT}
+          />
+        ))}
         <Pagination />
       </div>
       <div className="hidden col-span-2 not-prose mt-5 md:flex flex-col gap-10">
