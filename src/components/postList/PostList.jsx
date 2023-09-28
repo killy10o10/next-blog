@@ -6,7 +6,7 @@ import Pagination from '../pagination/Pagination';
 
 const getData = async (page) => {
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
-    cache: 'default',
+    cache: 'no-cache',
   });
   if (!res.ok) {
     throw new Error('Failed');
@@ -15,13 +15,18 @@ const getData = async (page) => {
 };
 
 const PostList = async ({ page }) => {
-  const data = await getData(page);
+  const {posts, count} = await getData(page);
+
+  const POST_PER_PAGE = 2;
+
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0
+  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count
 
   return (
     <div className="prose max-w-full grid md:grid-cols-7 gap-12 text-inherit">
       <div className="col-span-5 flex flex-col gap-10 md:block">
         <h4 className="text-inherit font-bold text-2xl">Recent Posts</h4>
-        {data?.map((post) => (
+        {posts?.map((post) => (
           <PostCard
             key={post.id}
             postCategory={post.slug}
@@ -31,7 +36,7 @@ const PostList = async ({ page }) => {
             postDate={post.createdAT}
           />
         ))}
-        <Pagination />
+        <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
       </div>
       <div className="hidden col-span-2 not-prose mt-5 md:flex flex-col gap-10">
         <div>

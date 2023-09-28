@@ -12,6 +12,7 @@ const getData = async () => {
 
 const CategoryList = async () => {
   const data = await getData();
+
   return (
     <>
       <div className="prose text-inherit max-w-full my-4">
@@ -19,7 +20,7 @@ const CategoryList = async () => {
         <div className="flex flex-wrap gap-5 justify-between items-center">
           {data?.map((item) => (
             <CategoryButton
-              key={item._id}
+              key={item.id}
               categoryImage={item.img || ""}
               categoryBG={item.title}
               categoryText={item.title}
