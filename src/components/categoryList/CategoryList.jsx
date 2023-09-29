@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import CategoryButton from '../categoryButton/CategoryButton';
 
 const getData = async () => {
@@ -19,12 +20,17 @@ const CategoryList = async () => {
         <h2 className="text-inherit">Categories</h2>
         <div className="flex flex-wrap gap-5 justify-between items-center">
           {data?.map((item) => (
-            <CategoryButton
+            <Link
               key={item.id}
-              categoryImage={item.img || ""}
-              categoryBG={item.title}
-              categoryText={item.title}
-            />
+              href={`/blog?category=${item.title}`}
+              className='no-underline'
+            >
+              <CategoryButton
+                categoryImage={item.img || ""}
+                categoryBG={item.title}
+                categoryText={item.title}
+              />
+            </Link>
           ))}
         </div>
       </div>
