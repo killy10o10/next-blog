@@ -30,10 +30,10 @@ const PostList = async ({ page, category }) => {
           <PostCard
             key={post.id}
             postCategory={post.slug}
-            postDescription={post.desc}
+            postDescription={post.desc.substring(0, 176)}
             postImage={post.img}
             postHeading={post.title}
-            postDate={post.createdAT}
+            postDate={post.createdAT.substring(0, 10)}
           />
         ))}
         <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
