@@ -4,8 +4,8 @@ import CategoryChip from '../categoryChip/CategoryChip';
 import Image from 'next/image';
 import Pagination from '../pagination/Pagination';
 
-const getData = async (page) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
+const getData = async (page, category) => {
+  const res = await fetch(`http://localhost:3000/api/posts?page=${page}&category=${category||""}`, {
     cache: 'no-cache',
   });
   if (!res.ok) {
@@ -14,8 +14,8 @@ const getData = async (page) => {
   return res.json();
 };
 
-const PostList = async ({ page }) => {
-  const {posts, count} = await getData(page);
+const PostList = async ({ page, category }) => {
+  const {posts, count} = await getData(page, category);
 
   const POST_PER_PAGE = 2;
 
