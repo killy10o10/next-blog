@@ -13,13 +13,36 @@ const getData = async (slug) => {
   return res.json();
 };
 
-const singlePostPage = async () => {
+const singlePostPage = async ({params}) => {
+  const {slug} = params
+  const postData = await getData(slug);
+  console.log(postData)
+
+  const insertBrTags = (text, interval) => {
+    if (typeof text !== 'string') {
+      return ''; // Return an empty string or handle the error as needed
+    }
+  
+    const words = text.split(' ');
+    let modifiedText = [];
+  
+    for (let i = 0; i < words.length; i++) {
+      modifiedText.push(words[i]);
+  
+      // Check if we need to insert a <br> tag
+      if ((i + 1) % interval === 0 && i < words.length - 1) {
+        modifiedText.push('<br>');
+      }
+    }
+  
+    return modifiedText.join(' ');
+  }
 
   return (
     <div className="min-h-screen max-w-[1400px] text-inherit">
       <div className='grid md:grid-cols-2 gap-10 md:gap-0 mt-5'>
         <div className='flex flex-col gap-5 justify-center'>
-          <h1 className="text-inherit tracking-wide leading-2 text-4xl lg:text-6xl font-black">Garlic bread with cheese: What the science tells us</h1>
+          <h1 className="text-inherit tracking-wide leading-2 text-4xl lg:text-6xl font-black">{postData?.title}</h1>
           <div className='flex items-center gap-4'>
             <Image className='rounded-full h-16 w-16 object-cover' src="/culture.jpg" alt='editors pick' width={35} height={35} />
             <div>
@@ -29,22 +52,15 @@ const singlePostPage = async () => {
           </div>
         </div>
         <div className='flex flex-col justify-center'>
-          <Image src="/fashion.jpg" alt='featured-image' priority={true} width={500} height={300} className='rounded-xl w-full h-[79%]' />
+         {postData && <Image src={postData.img} alt='featured-image' width={500} height={300} className='rounded-xl w-full h-[79%]' />}
         </div>
       </div>
 
       <div className='grid md:grid-cols-7 gap-12 text-inherit'>
           <div className='col-span-5 flex flex-col' >
-    
-            <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus quidem aut a nam qui veritatis, mollitia vel culpa in corrupti molestiae vero maxime ut, asperiores quod blanditiis distinctio voluptatibus!
-            architecto nisi facilis, praesentium voluptatibus itaque voluptatem consequuntur voluptatum accusantium culpa? Optio enim possimus, soluta suscipit quas quis.</p>
-            <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, deserunt, temporibus quidem delectus voluptatum provident recusandae porro deleniti consequatur dolores tenetur quae inventore quibusdam nisi error! Eligendi doloribus laborum sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus quidem aut a nam qui veritatis, mollitia vel culpa in corrupti molestiae vero maxime ut, asperiores quod blanditiis distinctio voluptatibus!
-            Ullam debitis assumenda explicabo repudiandae provident, perspiciatis temporibus repellendus numquam ipsam eveniet architecto nisi facilis, praesentium voluptatibus itaque voluptatem consequuntur voluptatum accusantium culpa? Optio enim possimus, soluta suscipit quas quis.</p>
-            <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus quidem aut a nam qui veritatis, mollitia vel culpa in corrupti molestiae vero maxime ut, asperiores quod blanditiis distinctio voluptatibus!
-             temporibus repellendus numquam ipsam eveniet architecto nisi facilis, praesentium voluptatibus itaque voluptatem consequuntur voluptatum accusantium culpa? Optio enim possimus, soluta suscipit quas quis.</p>
+            {
+              postData && insertBrTags(postData.desc, 48)
+            }
             <br />
             <Comment />
           </div>
