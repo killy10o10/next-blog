@@ -1,9 +1,10 @@
 "use client"
 import Link from 'next/link';
 import CommentText from '../commentText/CommentText';
+import { useSession } from 'next-auth/react';
 
 const Comment = () => {
-  const status = 'authenticated';
+  const { status } = useSession();
   return (
     <div className="flex flex-col transition delay-500">
       <h3 className="font-bold text-3xl my-10">Comments</h3>
