@@ -17,6 +17,7 @@ function WritePage() {
   return (
     <div className='min-h-screen relative'>
       <h3
+        suppressContentEditableWarning={true}
         contentEditable
         type='text'
         placeholder='Title'
