@@ -20,7 +20,7 @@ function WritePage() {
         contentEditable
         type='text'
         placeholder='Title'
-        className='bg-transparent h-fit overflow-scroll outline-none text-5xl p-12 w-[80%]'>
+        className='bg-transparent h-fit overflow-scroll outline-none text-5xl font-bold p-12 w-[80%]'>
         Title
       </h3>
       <div className='flex items-center gap-5 absolute z-50 -left-4 top-36'>
