@@ -7,7 +7,7 @@ import useSWR from "swr";
 const fetcher = async (url) => {
    const res = await  fetch(url);
    const data = await res.json();
-   if(res.ok) {
+   if(!res.ok) {
        throw  new Error(data.message);
    }
    return data;
@@ -36,8 +36,15 @@ const Comment = ({postSlug}) => {
           Login to comment
         </Link>
       )}
-      <CommentText />
-      <CommentText />
+       { !isLoading &&
+          data?.map(commentData => <CommentText
+            key={commentData.id}
+            commentDate={commentData.createdAt}
+            commentDesc={commentData.desc}
+            commentUserProfilePic={commentData.user.image}
+            commentUsername={commentData.user.name}
+          />
+       )}
     </div>
   );
 };
