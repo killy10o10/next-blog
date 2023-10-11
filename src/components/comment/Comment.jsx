@@ -1,10 +1,22 @@
 "use client"
 import Link from 'next/link';
 import CommentText from '../commentText/CommentText';
-import { useSession } from 'next-auth/react';
+import {useSession} from 'next-auth/react';
+import useSWR from "swr";
 
-const Comment = () => {
+const fetcher = async (url) => {
+   const res = await  fetch(url);
+   const data = await res.json();
+   if(res.ok) {
+       throw  new Error(data.message);
+   }
+   return data;
+}
+
+const Comment = ({postSlug}) => {
   const { status } = useSession();
+  const {data, isLoading} = useSWR(`http://localhost:3000/api/comments?postslug=${postSlug}`, fetcher)
+
   return (
     <div className="flex flex-col transition delay-500">
       <h3 className="font-bold text-3xl my-10">Comments</h3>

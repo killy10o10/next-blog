@@ -65,7 +65,7 @@ const singlePostPage = async ({params}) => {
             />)
           }
             <br />
-            <Comment />
+            <Comment postSlug={slug} />
           </div>
           <div className='col-span-2 hidden md:flex flex-col gap-10'>
             <div>

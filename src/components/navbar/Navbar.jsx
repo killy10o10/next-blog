@@ -1,7 +1,7 @@
 'use client'
 import useColorMode from '@/hooks/useColorMode';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {BsFillSunFill, BsMoonFill, BsTwitter, BsGithub, BsInstagram, BsLinkedin} from 'react-icons/bs';
 import {HiMiniBars3BottomRight, HiXMark} from 'react-icons/hi2'
 import AuthLink from '../authLink/AuthLink';

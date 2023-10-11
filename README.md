@@ -27,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - git
-- Broswer to Display
+- Browser to Display
 - IDE to run and edit the code
 
 ### Setup
