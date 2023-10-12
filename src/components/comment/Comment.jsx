@@ -15,7 +15,7 @@ const fetcher = async (url) => {
 
 const Comment = ({postSlug}) => {
   const { status } = useSession();
-  const {data, isLoading} = useSWR(`http://localhost:3000/api/comments?postslug=${postSlug}`, fetcher)
+  const {data, isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher)
 
   return (
     <div className="flex flex-col transition delay-500">
