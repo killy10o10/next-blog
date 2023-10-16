@@ -13,9 +13,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='en'
+  
+    >
       <AuthProvider>
         <body
+          suppressHydrationWarning={true}
           className={`${inter.variable} font-sans bg-white text-blue-gray-900 dark:text-blue-gray-400 dark:bg-blue-gray-600 transition-all duration-500 ease-linear`}>
           <div className='p-3'>
             <div className='max-w-[1400px] mx-auto'>

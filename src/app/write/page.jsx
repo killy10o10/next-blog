@@ -11,6 +11,7 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 function WritePage() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
+  const [file, setFile] = useState(null);
 
   const handleOpen = () => setOpen(!open);
 
@@ -33,11 +34,10 @@ function WritePage() {
         </button>
         {open && (
           <div className='flex gap-3'>
-            <button
-              type='button'
-              className='active:scale-95 transition border rounded-full p-2 border-green-500'>
+            <input type="file" id='image' className='hidden'  onChange={(e) => setFile(e.target.files[0])} />
+            <label htmlFor='image' className='active:scale-95 transition border rounded-full p-2 border-green-500'>
               <BsImage className='text-xl' />
-            </button>
+            </label>
             <button
               type='button'
               className='active:scale-95 transition border rounded-full p-2 border-green-500'>
