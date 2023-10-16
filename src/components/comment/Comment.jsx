@@ -18,27 +18,23 @@ const Comment = ({postSlug}) => {
   const { status } = useSession();
   const {data, mutate, isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher);
 
-  const [commentDesc, setCommentDesc] = useState({
-    commentBox: ""
-  });
+  const [commentDesc, setCommentDesc] = useState("");
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setCommentDesc(prev => ({
-      ...prev,
-      [name]: value
-    }))
+    const {value} = e.target
+    setCommentDesc(value)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await fetch("/api/comments", {
-        method: "POST",
-        body: JSON.stringify(commentDesc.commentBox, postSlug)
+    await fetch("http://localhost:3000/api/comments", {
+      method: "POST",
+      body: JSON.stringify(commentDesc, postSlug)
     });
     mutate();
+    console.log(commentDesc)
+      setCommentDesc("")
 
-    console.log(commentDesc.commentBox)
   }
 
   return (
@@ -49,7 +45,7 @@ const Comment = ({postSlug}) => {
           <textarea
             className="w-[80%] rounded shadow px-4 py-2 text-xl text-blue-gray-900 font-mono"
             name='commentBox'
-            value={commentDesc.commentBox}
+            value={commentDesc}
             onChange={handleChange}
             placeholder="write comment here"></textarea>
           <button type='submit' onClick={handleSubmit} className="rounded shadow bg-blue-600 font-bold text-slate-100 h-fit py-2 px-8">
