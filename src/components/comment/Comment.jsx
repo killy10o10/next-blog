@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CommentText from '../commentText/CommentText';
 import {useSession} from 'next-auth/react';
 import useSWR from "swr";
+import { useState } from 'react';
 
 const fetcher = async (url) => {
    const res = await  fetch(url);
@@ -15,7 +16,30 @@ const fetcher = async (url) => {
 
 const Comment = ({postSlug}) => {
   const { status } = useSession();
-  const {data, isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher)
+  const {data, mutate, isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher);
+
+  const [commentDesc, setCommentDesc] = useState({
+    commentBox: ""
+  });
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setCommentDesc(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify(commentDesc.commentBox, postSlug)
+    });
+    mutate();
+
+    console.log(commentDesc.commentBox)
+  }
 
   return (
     <div className="flex flex-col transition delay-500">
@@ -24,8 +48,11 @@ const Comment = ({postSlug}) => {
         <form className="flex flex-col md:flex-row gap-5 items-center">
           <textarea
             className="w-[80%] rounded shadow px-4 py-2 text-xl text-blue-gray-900 font-mono"
+            name='commentBox'
+            value={commentDesc.commentBox}
+            onChange={handleChange}
             placeholder="write comment here"></textarea>
-          <button className="rounded shadow bg-blue-600 font-bold text-slate-100 h-fit py-2 px-8">
+          <button type='submit' onClick={handleSubmit} className="rounded shadow bg-blue-600 font-bold text-slate-100 h-fit py-2 px-8">
             Send
           </button>
         </form>
