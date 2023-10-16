@@ -27,14 +27,12 @@ const Comment = ({postSlug}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await fetch("http://localhost:3000/api/comments", {
+    await fetch("/api/comments", {
       method: "POST",
-      body: JSON.stringify(commentDesc, postSlug)
+      body: JSON.stringify({desc: commentDesc, postSlug})
     });
     mutate();
-    console.log(commentDesc)
-      setCommentDesc("")
-
+    setCommentDesc("")
   }
 
   return (
