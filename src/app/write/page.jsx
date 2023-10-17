@@ -72,7 +72,6 @@ function WritePage() {
         catSlug: "culture" 
       })
     })
-    console.log(res)
   }
 
   return (

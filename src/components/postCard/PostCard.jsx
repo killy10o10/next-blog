@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const PostCard = ({postHeading, postImage, postDescription, postCategory, postDate}) => {
+const PostCard = ({postHeading, postImage, postDescription, postCategory, postSlug, postDate}) => {
   return (
     <div className="grid items-center lg:grid-cols-2 lg:gap-8">
       <div className="hidden md:block">
@@ -20,7 +20,7 @@ const PostCard = ({postHeading, postImage, postDescription, postCategory, postDa
           <span className="text-gray-400 dark:text-gray-600">{postDate}</span> ●{' '}
           <span className="text-red-600 uppercase">{postCategory}</span>
         </small>
-        <Link href={`/posts/${postCategory}`}>       
+        <Link href={`/posts/${postSlug}`}>       
         <h3 className="text-inherit font-bold text-2xl md:my-4">
           {postHeading}
         </h3>
@@ -28,7 +28,7 @@ const PostCard = ({postHeading, postImage, postDescription, postCategory, postDa
         <p>
           {postDescription}
         </p>
-        <Link href={`/posts/${postCategory}`} className="font-bold w-fit border-b-2 border-red-600 my-4">Read More</Link>
+        <Link href={`/posts/${postSlug}`} className="font-bold w-fit border-b-2 border-red-600 my-4">Read More</Link>
       </div>
     </div>
   );

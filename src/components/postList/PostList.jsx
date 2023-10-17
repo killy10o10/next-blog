@@ -29,7 +29,8 @@ const PostList = async ({ page, category }) => {
         {posts?.map((post) => (
           <PostCard
             key={post.id}
-            postCategory={post.slug}
+            postCategory={post.catSlug}
+            postSlug={post.slug}
             postDescription={post.desc.substring(0, 176)}
             postImage={post.img}
             postHeading={post.title}
