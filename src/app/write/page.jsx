@@ -49,7 +49,6 @@ function WritePage() {
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL)
-            console.log('File available at', downloadURL);
           });
         }
       );
