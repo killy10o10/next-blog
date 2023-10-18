@@ -4,7 +4,9 @@ import Image from 'next/image';
 
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const url = new URL(`/api/posts/${slug}`, baseUrl);
+  const res = await fetch(url.toString(), {
     cache: 'no-cache',
   });
   if (!res.ok) {
@@ -12,6 +14,7 @@ const getData = async (slug) => {
   }
   return res.json();
 };
+
 
 const singlePostPage = async ({params}) => {
   const {slug} = params

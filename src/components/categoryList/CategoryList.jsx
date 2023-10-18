@@ -2,14 +2,18 @@ import Link from 'next/link';
 import CategoryButton from '../categoryButton/CategoryButton';
 
 const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/categories', {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const url = new URL('/api/categories', baseUrl);
+
+  const res = await fetch(url.toString(), {
     cache: 'default',
   });
   if (!res.ok) {
-    throw new Error('Failed');
+    throw Error('Failed');
   }
   return res.json();
 };
+
 
 const CategoryList = async () => {
   const data = await getData();

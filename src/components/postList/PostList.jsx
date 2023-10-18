@@ -5,14 +5,21 @@ import Image from 'next/image';
 import Pagination from '../pagination/Pagination';
 
 const getData = async (page, category) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}&category=${category||""}`, {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const url = new URL('/api/posts', baseUrl);
+  url.search = new URLSearchParams({ page, category: category || "" }).toString();
+
+  const res = await fetch(url.toString(), {
     cache: 'no-cache',
   });
+
   if (!res.ok) {
     throw new Error('Failed');
   }
   return res.json();
 };
+
+
 
 const PostList = async ({ page, category }) => {
   const {posts, count} = await getData(page, category);
